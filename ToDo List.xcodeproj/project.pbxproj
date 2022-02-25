@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		000A90C027C9951B00FA150F /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A90BF27C9951B00FA150F /* LocalNotificationManager.swift */; };
+		000A90C227C99C5F00FA150F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A90C127C99C5F00FA150F /* UIViewController+Alert.swift */; };
 		0021637727C95CA300E83B1E /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0021637627C95CA300E83B1E /* ListTableViewCell.swift */; };
 		0021637B27C9874000E83B1E /* ToDoItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0021637A27C9874000E83B1E /* ToDoItems.swift */; };
 		00DF0ADD27BEF22F00536A04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF0ADC27BEF22F00536A04 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		000A90BF27C9951B00FA150F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		000A90C127C99C5F00FA150F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		0021637627C95CA300E83B1E /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		0021637A27C9874000E83B1E /* ToDoItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItems.swift; sourceTree = "<group>"; };
 		00DF0AD927BEF22F00536A04 /* ToDo List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 				00DF0ADC27BEF22F00536A04 /* AppDelegate.swift */,
 				00DF0ADE27BEF22F00536A04 /* SceneDelegate.swift */,
 				000A90BF27C9951B00FA150F /* LocalNotificationManager.swift */,
+				000A90C127C99C5F00FA150F /* UIViewController+Alert.swift */,
 				00F6982627C036AE005E6146 /* ToDoItem.swift */,
 				0021637A27C9874000E83B1E /* ToDoItems.swift */,
 				00DF0AE027BEF22F00536A04 /* ToDoListViewController.swift */,
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				000A90C227C99C5F00FA150F /* UIViewController+Alert.swift in Sources */,
 				00DF0AE127BEF22F00536A04 /* ToDoListViewController.swift in Sources */,
 				0021637B27C9874000E83B1E /* ToDoItems.swift in Sources */,
 				00DF0ADD27BEF22F00536A04 /* AppDelegate.swift in Sources */,

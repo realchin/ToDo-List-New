@@ -51,7 +51,7 @@ class ToDoDetailTableViewController: UITableViewController {
         }
         
         updateUserInterface()
-
+        
     }
     
     func updateUserInterface() {
@@ -66,6 +66,27 @@ class ToDoDetailTableViewController: UITableViewController {
         
     }
     
+    func updateReminderSwitch() {
+        
+        LocalNotificationManager.isAuthorized { (authorized) in
+            DispatchQueue.main.async {
+                
+                if !authorized && self.reminderSwitch.isOn {
+                    self.oneButtonAlert(title: "User Has Not Allowed Notifications", message: "To receive alerts for reminders, open the Settings app, select ToDo list > Notifications > Allow Notifications.")
+                    self.reminderSwitch.isOn = false
+                }
+                
+                self.view.endEditing(true)
+                self.dateLabel.textColor = (self.reminderSwitch.isOn ? .black : .gray)
+                self.tableView.beginUpdates()
+                self.tableView.endUpdates()
+                
+            }
+            
+        }
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         toDoItem = ToDoItem(name: nameField.text!, date: datePicker.date, notes: noteView.text, reminderSet: reminderSwitch.isOn, completed: toDoItem.completed)
@@ -73,13 +94,18 @@ class ToDoDetailTableViewController: UITableViewController {
     }
     
     func enableDisableSaveButton(text: String) {
+        
         if text.count > 0 {
+            
             saveBarButton.isEnabled = true
+            
         } else {
+            
             saveBarButton.isEnabled = false
+            
         }
     }
-
+    
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         
         let isPresentingInAddMode = presentingViewController is UINavigationController
@@ -97,10 +123,7 @@ class ToDoDetailTableViewController: UITableViewController {
     
     @IBAction func reminderSwitchChanged(_ sender: UISwitch) {
         
-        self.view.endEditing(true)
-        dateLabel.textColor = (reminderSwitch.isOn ? .black : .gray)
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        updateReminderSwitch()
         
     }
     
@@ -113,7 +136,7 @@ class ToDoDetailTableViewController: UITableViewController {
     
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         enableDisableSaveButton(text: sender.text!)
-
+        
     }
     
     
