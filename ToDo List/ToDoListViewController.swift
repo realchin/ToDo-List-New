@@ -189,9 +189,11 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource, Li
     
     func checkBoxToggle(sender: ListTableViewCell) {
         if let selectedIndexPath = tableView.indexPath(for: sender) {
+            
             toDoItems[selectedIndexPath.row].completed = !toDoItems[selectedIndexPath.row].completed
             tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
             saveData()
+            
         }
     }
     
